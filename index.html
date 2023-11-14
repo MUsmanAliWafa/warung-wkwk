@@ -13,17 +13,17 @@
     <!-- feather-icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- alpine.js -->
-    <script
+    <!-- <script
       defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
     <!-- app -->
-    <script src="src/app.js"></script>
+    <!-- <script src="src/app.js"></script> -->
     <!-- mycss -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!---start navbar-->
-    <nav class="navbar" x-data >
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">Cafe <span>WKWK</span>.</a>
 
       <div class="navbar-nav">
@@ -66,10 +66,7 @@
                   &minus;
                 </button>
                 <span x-text="item.quantity"></span>
-                <button id="add" 
-                @click="$store.cart.add(item) ">
-                  &plus;
-                </button>
+                <button id="add" @click="$store.cart.add(item) ">&plus;</button>
                 &equals;
                 <span x-text="rupiah(item.total)"></span>
               </div>
@@ -398,5 +395,11 @@
       feather.replace();
     </script>
     <script src="js/script.js"></script>
+    <!-- alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- app -->
+    <script src="src/app.js"></script>
   </body>
 </html>
