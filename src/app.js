@@ -40,7 +40,7 @@ document.addEventListener('alpine:init', () => {
     quantity: 0,
     add(newItem) {
       // cek apakah ada barang yang sama di cart
-      const cartItem = this.items.find((item) => item.id === newItem.id)
+      const cartItem = this.items.find((item) => item.id === newItem.id);
       // jika belun ada/ cart masih kosong
       if (!cartItem) {
         this.items.push({...newItem,quantity: 1,total: newItem.price});
