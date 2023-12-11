@@ -109,7 +109,9 @@ form.addEventListener('keyup', function () {
       return false;
     }
   }
-})
+  checkoutButton.disabled = false;
+  checkoutButton.classList.remove('disabled');
+});
 
 
 
