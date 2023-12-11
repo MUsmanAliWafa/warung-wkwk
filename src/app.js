@@ -113,6 +113,13 @@ form.addEventListener('keyup', function () {
   checkoutButton.classList.remove('disabled');
 });
 
+// kirim data ketika tombol di click
+checkoutButton.addEventListener('click',function(e){
+e.preventDefault;
+const formData =new FormData(form);
+const data = new URLSearchParams(formData);
+const objData =Object.fromEntries(data);
+});
 
 
 // konversi ke rupiah
