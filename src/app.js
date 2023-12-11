@@ -105,7 +105,7 @@ form.addEventListener('keyup', function () {
     if (form.elements[i].value.length !== 0) {
       checkoutButton.classList.remove('disabled');
       checkoutButton.classList.add('disabled');
-    }else{
+    } else {
       return false;
     }
   }
@@ -114,12 +114,27 @@ form.addEventListener('keyup', function () {
 });
 
 // kirim data ketika tombol di click
-checkoutButton.addEventListener('click',function(e){
-e.preventDefault;
-const formData =new FormData(form);
-const data = new URLSearchParams(formData);
-const objData =Object.fromEntries(data);
+checkoutButton.addEventListener('click', function (e) {
+  e.preventDefault;
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+  const objData = Object.fromEntries(data);
+  const message = formatMessage(objData);
+  Window.open('http://wa.me/6285348292652?text=' + encodeURIComponent(message));
 });
+
+// format pesan whatsapp
+const formatMessage = (objData) => {
+  return `Data Custemer
+  Nama : ${obj.name}
+  Email : ${obj.enail}
+  No Hp : ${obj.phone}
+Data Pesanan
+  ${JSON.parse(obj.items.map((item)=>`${item.name}${item.quantity} x ${rupiah(item.total)} \n`))}
+Total: ${rupiah(obj.total)}
+Terima Kasih!
+  `;
+};
 
 
 // konversi ke rupiah
