@@ -43,7 +43,11 @@ document.addEventListener('alpine:init', () => {
       const cartItem = this.items.find((item) => item.id === newItem.id);
       // jika belun ada/ cart masih kosong
       if (!cartItem) {
-        this.items.push({...newItem,quantity: 1,total: newItem.price});
+        this.items.push({
+          ...newItem,
+          quantity: 1,
+          total: newItem.price
+        });
         this.quantity++;
         this.total += newItem.price;
       } else {
@@ -91,11 +95,29 @@ document.addEventListener('alpine:init', () => {
   });
 });
 
+// form validation
+const checkoutButton = document.querySelector('.checkout-button');
+checkoutButton.disabled = true;
+
+const form = document.querySelector('#checkoutForm');
+form.addEventListener('keyup', function () {
+  for (let i = 0; i < form.elements.length; i++) {
+    if (form.elements[i].value.length !== 0) {
+      checkoutButton.classList.remove('disabled');
+      checkoutButton.classList.add('disabled');
+    }else{
+      return false;
+    }
+  }
+})
+
+
+
 // konversi ke rupiah
-const rupiah = (number) => {
+function rupiah(number) {
   return new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
     minimumFractionDigits: 0,
   }).format(number);
-};
+}
