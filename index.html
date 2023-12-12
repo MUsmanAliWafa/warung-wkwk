@@ -13,9 +13,9 @@
     <!-- feather-icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- alpine.js -->
-    <!-- <script
+    <script
       defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- app -->
     <!-- <script src="src/app.js"></script> -->
     <!-- mycss -->
@@ -82,8 +82,8 @@
 
         <div class="form-container" x-show="$store.cart.items.length ">
           <form action="" id="checkoutForm">
-            <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items) ">
-            <input type="hidden" name="total" x-model="$store.cart.total ">
+            <input type="hidden" name="items" x-model="JSON.stringify($store.cart.item) ">
+            <input type="hidden" name="total" x-model="$store.cart.total">
             <h5>Customer Detail</h5>
 
             <label for="name">
@@ -397,10 +397,6 @@
       feather.replace();
     </script>
     <script src="js/script.js"></script>
-    <!-- alpine.js -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- app -->
     <script src="src/app.js" async></script>
   </body>
